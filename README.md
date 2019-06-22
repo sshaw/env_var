@@ -1,9 +1,7 @@
 # EnvVar
 
-Environment variable utility methods.
-
-- Check if an environment variable is set to an enabled or disabled value
-- Fetch an environment variable as an Array of `String`s or `Symbol`s
+Check if an environment variable is set to an enabled or disabled value.
+Fetch an environment variable as an Array of `String`s or `Symbol`s.
 
 ## Usage
 
@@ -109,6 +107,18 @@ p ENV::w["VARIABLE_NAME"]
 
 # ENV::W, ENV::I do not work
 ```
+
+## Why?
+
+Got tired of writing this over and over in various applications:
+
+```rb
+%w[true 1 on].include?(ENV["SOME_VAR"])
+```
+
+## Author
+
+Skye Shaw (skye DOT shaw AT gmail )
 
 ## License
 
