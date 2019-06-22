@@ -1,5 +1,7 @@
 # EnvVar
 
+[![Build Status](https://travis-ci.org/sshaw/env_var.svg?branch=master)](https://travis-ci.org/sshaw/env_var)
+
 Check if an environment variable is set to an enabled or disabled value.
 Fetch an environment variable as an Array of `String`s or `Symbol`s.
 
@@ -24,7 +26,7 @@ disable_foo if $ENV.disabled?("VARIABLE_NAME")
 ```
 
 Note that if the environment variable **is not set** `enabled?` and `disabled?` **can both be `false`**.
-If something is not enabled that does not mean it's disabled.
+If something is not enabled that does not mean it was explicitly disabled.
 
 Don't do this:
 ```rb
@@ -44,7 +46,7 @@ Return an environment variable's value as an `Array` of words (`String`s):
 
 
 ```
-export VARIABLE_NAME=a,b,c
+export VARIABLE_NAME="a,b,c"
 export ANOTHER_VARIABLE=
 ```
 
@@ -89,7 +91,7 @@ $ENV.each { |name, value| ... }
 require "env_var"
 
 enable_foo if EnvVar.enabled?("VARIABLE_NAME")
-disable_foo if EnvVar.disabled?(VARIABLE_NAME")
+disable_foo if EnvVar.disabled?("VARIABLE_NAME")
 p EnvVar["VARIABLE_NAME"]
 p EnvVar.delete("VARIABLE_NAME")
 EnvVar.each { |name, value| ... }
@@ -101,7 +103,7 @@ EnvVar.each { |name, value| ... }
 require "env_var/env"
 
 enable_foo if ENV.enabled?("VARIABLE_NAME")
-disable_bar if ENV.disabled?(VARIABLE_NAME")
+disable_bar if ENV.disabled?("VARIABLE_NAME")
 p ENV::i["VARIABLE_NAME"]
 p ENV::w["VARIABLE_NAME"]
 
