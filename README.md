@@ -115,8 +115,12 @@ p ENV::w["VARIABLE_NAME"]
 Got tired of writing this over and over in various applications:
 
 ```rb
-%w[true 1 on].include?(ENV["SOME_VAR"])
+enable_foo if %w[true 1 on].include?(ENV["ENABLE_FOO"])
 ```
+
+## See Also
+
+- [Envied](https://github.com/eval/envied) - Ensures presence and type of your app's ENV-variables
 
 ## Author
 
