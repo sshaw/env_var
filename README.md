@@ -75,7 +75,7 @@ $ENV.I("VARIABLE_NAME")   # [:a, :b, :c]
 $ENV.i("VARIABLE_NAME")   # [:a, :b, :c]
 ```
 
-Mnemonic `%w(a b c)`.
+Mnemonic `%i(a b c)`.
 
 ### Otherwise, Use it Like You Would `ENV`
 
